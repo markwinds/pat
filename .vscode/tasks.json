@@ -1,0 +1,20 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "PAT", //该编译任务的名字
+            "type": "shell",
+            "command": "g++", //默认生成一个a.out文件
+            "args": [
+                "-g", //要调试就要加这个参数
+                "A1135.cpp" //要编译的文件，这个参数每换一个题目都要改
+            ],
+            "group": { //设置编译的快捷键，C+M+b就默认编译这个文件
+                "kind": "build",
+                "isDefault": true //打开默认
+            }
+        }
+    ]
+}
