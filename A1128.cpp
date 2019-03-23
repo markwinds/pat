@@ -3,14 +3,15 @@
 #include <vector>
 #include <cstring>
 #include <algorithm>
+#include <set>
+#include <map>
 
 using namespace std;
 
-bool visit[2010];
+map<int, int> a, b, c;
 
 int main()
 {
-    memset(visit, false, sizeof(visit));
     int k;
     int n;
 
@@ -19,26 +20,20 @@ int main()
     {
         cin >> n;
         int flag = 0;
-        int old;
-        memset(visit, false, sizeof(visit));
+        a.clear();
+        b.clear();
+        c.clear();
         for (int j = 1; j <= n; j++)
         {
             int temp;
             cin >> temp;
-            if (j != 1)
-            {
-                if (temp = old + 1)
-                    flag = 1;
-            }
-            temp += j;
-            if (visit[temp] == true)
-            {
+            if (a.count(temp) || b.count(temp + j) || c.count(temp - j))
                 flag = 1;
-            }
-            visit[temp] = true;
-            old = temp;
+            a[temp] = 1;
+            b[temp + j] = 1;
+            c[temp - j] = 1;
         }
-        flag ? printf("No\n") : printf("Yes\n");
+        flag ? printf("NO\n") : printf("YES\n");
     }
 
     return 0;
