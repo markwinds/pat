@@ -1,3 +1,6 @@
+/*
+vector<int> v(k); 用来初始化vector
+*/
 #include <cstdio>
 #include <iostream>
 #include <vector>
