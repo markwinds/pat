@@ -24,12 +24,15 @@ bool cmp(Node a, Node b)
 
 int main()
 {
-    sort(node, node + 9, cmp);
+    // char buf[50];
+    // sscanf("iios/12DDWDFF@122", "%*[^o]%[^@]", buf);
+    // printf("%s\n", buf);
 
-    for (int i = 0; i < 9; i++)
-    {
-        cout << node[i].id << " " << node[i].num << endl;
-    }
+    // printf("%d", atoi("+03"));
+    string a = "113 4 5 66 ";
+    char b[40];
+    sscanf(a.c_str(), "%[1-9]", b);
+    cout << b;
 
     return 0;
 }
